@@ -16,13 +16,7 @@ const Experience = () => {
       description:
         "Currently working as a Frontend Development Intern under IBM SkillsBuild at Edunet Foundation. Contributing to real-world web projects, enhancing responsive design, and improving user experience using React, Tailwind CSS, and JavaScript. Collaborating with mentors to build scalable and interactive interfaces.",
     },
-    {
-      title: "Open Source Contributor",
-      subtitle: "GitHub Community Projects",
-      duration: "2024 – Present",
-      description:
-        "Contributed to open-source repositories focused on web and AI solutions. Collaborated with developers globally, learning Git workflows, version control, and best coding practices while improving existing codebases and documentation.",
-    },
+
     {
       title: "Project Developer & Team Lead",
       subtitle: "IIIT Dharwad | Academic Project",
