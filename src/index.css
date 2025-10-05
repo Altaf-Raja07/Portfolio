@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 96%;
+    --foreground: 0 0% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+
+    --primary: 0 0% 12%;
+    --primary-foreground: 0 0% 96%;
+
+    --secondary: 0 0% 69%;
+    --secondary-foreground: 0 0% 12%;
+
+    --muted: 0 0% 88%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+
+    /* Custom portfolio tokens */
+    --hero-gradient-start: 0 0% 96%;
+    --hero-gradient-end: 199 20% 92%;
+    
+    --timeline-line: 0 0% 85%;
+    --timeline-dot: 199 89% 48%;
+    
+    --card-shadow: 0 0% 12% / 0.08;
+    
+    /* Animation timings */
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 0 0% 12%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 16%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 16%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 12%;
+
+    --secondary: 0 0% 45%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 24%;
+    --muted-foreground: 0 0% 69%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 24%;
+    --input: 0 0% 24%;
+    --ring: 199 89% 48%;
+    
+    --timeline-line: 0 0% 24%;
+    --card-shadow: 0 0% 100% / 0.05;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--hero-gradient-end)));
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .card-shadow {
+    box-shadow: 0 4px 24px hsl(var(--card-shadow));
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s var(--transition-smooth) forwards;
+    opacity: 0;
+  }
+
+  @keyframes slide-up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s var(--transition-smooth) forwards;
+    opacity: 0;
+  }
+
+  @keyframes fade-in {
+    to { opacity: 1; }
+  }
+}
