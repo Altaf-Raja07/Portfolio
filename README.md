@@ -64,7 +64,7 @@ From the repository stats: the codebase is ~97% TypeScript and ~1.8% CSS. :conte
 
 Here’s a high-level view of how the project is organized:
 
-/
+```/
 ├── public/ # Static assets (images, favicon, etc.)
 ├── src/ # Main source code
 │ ├── components/ # Reusable UI components
@@ -77,3 +77,4 @@ Here’s a high-level view of how the project is organized:
 ├── tailwind.config.ts
 ├── postcss.config.js
 └── bun.lockb
+```
